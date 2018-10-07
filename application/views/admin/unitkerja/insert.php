@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="overview-wrap">
-                        <h2 class="title-1">Lingkup Keluhan</h2>
-                        <a href="<?php echo base_url('Admin/LingkupKeluhan') ?>" class="au-btn au-btn-icon btn-secondary">
+                        <h2 class="title-1">Unit Kerja</h2>
+                        <a href="<?php echo base_url('Admin/UnitKerja') ?>" class="au-btn au-btn-icon btn-secondary">
                             Kembali
                         </a>
                     </div>
@@ -21,15 +21,6 @@
                             <form action="" method="post" class="form-horizontal" id="form-input">
                                 <div class="row form-group">
                                     <div class="col col-md-3">
-                                        <label for="input-id" class=" form-control-label">ID</label>
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        <input type="text" id="input-id" name="id" placeholder="Masukan ID" class="form-control" value="<?php echo set_value("id") ?>">
-                                        <small class="form-text text-muted">Hanya diisi angka</small>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3">
                                         <label for="input-kode" class=" form-control-label">Kode</label>
                                     </div>
                                     <div class="col-12 col-md-9">
@@ -42,7 +33,7 @@
                                         <label for="input-nama" class=" form-control-label">Nama</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="Nama" id="input-nama" rows="4" placeholder="Masukan Nama" class="form-control"><?php echo set_value("nama") ?></textarea>
+                                        <textarea name="nama" id="input-nama" rows="4" placeholder="Masukan Nama" class="form-control"><?php echo set_value("nama") ?></textarea>
                                     </div>
                                 </div>
                             </form>

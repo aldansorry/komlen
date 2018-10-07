@@ -1,19 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LingkupKeluhan extends CI_Controller {
+class UnitKerja extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		$this->load->model('LingkupKeluhan_model');
+		$this->load->model('UnitKerja_model');
 	}
 	public function index()
 	{
-		$data['data'] = $this->LingkupKeluhan_model->get();
+		$data['data'] = $this->UnitKerja_model->get();
 		$this->load->view('admin/header');
-		$this->load->view('admin/lingkupkeluhan/lingkupkeluhan',$data);
+		$this->load->view('admin/unitkerja/unitkerja',$data);
 		$this->load->view('admin/footer');
 	}
 	public function insert()
@@ -23,11 +23,11 @@ class LingkupKeluhan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/header');
-			$this->load->view('admin/lingkupkeluhan/insert');
+			$this->load->view('admin/unitkerja/insert');
 			$this->load->view('admin/footer');
 		} else {
-			$this->LingkupKeluhan_model->insert();
-			redirect('Admin/LingkupKeluhan','refresh');
+			$this->UnitKerja_model->insert();
+			redirect('Admin/unitkerja','refresh');
 		}
 	}
 	public function update($id)
@@ -37,18 +37,18 @@ class LingkupKeluhan extends CI_Controller {
 		
 		
 		if ($this->form_validation->run() == FALSE) {
-			$data['lingkup_keluhan'] = $this->LingkupKeluhan_model->get_id($id);
+			$data['unit_kerja'] = $this->UnitKerja_model->get_id($id);
 			$this->load->view('admin/header');
-			$this->load->view('admin/lingkupkeluhan/update',$data);
+			$this->load->view('admin/unitkerja/update',$data);
 			$this->load->view('admin/footer');
 		} else {
-			$this->LingkupKeluhan_model->update($id);
-			redirect('Admin/LingkupKeluhan','refresh');
+			$this->UnitKerja_model->update($id);
+			redirect('Admin/UnitKerja','refresh');
 		}
 	}
 	public function delete($id)
 	{
-		$this->LingkupKeluhan_model->delete($id);
-		redirect('Admin/LingkupKeluhan','refresh');
+		$this->UnitKerja_model->delete($id);
+		redirect('Admin/UnitKerja','refresh');
 	}
 }

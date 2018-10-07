@@ -191,6 +191,16 @@
                                                                     <i class="fas fa-user"></i>Petugas
                                                                 </a>
                                                             </li>
+                                                            <li>
+                                                                <a href="<?php echo base_url("Admin/LingkupKeluhan") ?>">
+                                                                    <i class="fas fa-user"></i>Lingkup Keluhan
+                                                                </a>
+                                                            </li>
+                                                             <li>
+                                                                <a href="<?php echo base_url("Admin/UnitKerja") ?>">
+                                                                    <i class="fas fa-user"></i>Unit Kerja
+                                                                </a>
+                                                            </li>
 
                                                         </ul>
                                                     </nav>

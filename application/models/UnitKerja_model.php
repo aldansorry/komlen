@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LingkupKeluhan_model extends CI_Model {
+class UnitKerja_model extends CI_Model {
 
 	public function get()
 	{
-		$this->db->select("lingkup_keluhan.*");
-		return $this->db->get('lingkup_keluhan')->result();
+		$this->db->select("unit_kerja.*");
+		return $this->db->get('unit_kerja')->result();
 	}
 	public function get_id($id)
 	{
-		return $this->db->where('id',$id)->get('lingkup_keluhan')->row(0);
+		return $this->db->where('id',$id)->get('unit_kerja')->row(0);
 	}
 	public function insert()
 	{
@@ -18,7 +18,7 @@ class LingkupKeluhan_model extends CI_Model {
 			'kode' => $this->input->post('kode'),
 			'nama' => $this->input->post('nama'),
 		);
-		$this->db->insert('lingkup_keluhan',$set);
+		$this->db->insert('unit_kerja',$set);
 	}
 	public function update($id)
 	{
@@ -27,11 +27,11 @@ class LingkupKeluhan_model extends CI_Model {
 			'nama' => $this->input->post('nama'),
 		);
 		$this->db->where('id',$id);
-		$this->db->update('lingkup_keluhan',$set);
+		$this->db->update('unit_kerja',$set);
 	}
 	public function delete($id)
 	{
 		$this->db->where('id',$id);
-		$this->db->delete('lingkup_keluhan');
+		$this->db->delete('unit_kerja');
 	}
 }

@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="overview-wrap">
                         <h2 class="title-1">Lingkup Keluhan</h2>
-                        <a href="<?php echo base_url('Admin/lingkup_keluhan/insert') ?>" class="au-btn au-btn-icon au-btn--blue">
+                        <a href="<?php echo base_url('Admin/LingkupKeluhan/insert') ?>" class="au-btn au-btn-icon au-btn--blue">
                             <i class="zmdi zmdi-plus"></i>Tambah Data</a>
                         </div>
                     </div>
@@ -30,10 +30,10 @@
                                             <td><?php echo $value->nama ?></td>
                                             <td>
                                                 <div class="table-data-feature">
-                                                    <a href="<?php echo base_url("Admin/lingkup_keluhan/update/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                                    <a href="<?php echo base_url("Admin/LingkupKeluhan/update/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </a>
-                                                    <a href="<?php echo base_url("Admin/lingkup_keluhan/delete/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                                    <a href="<?php echo base_url("Admin/LingkupKeluhan/delete/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                                         <i class="zmdi zmdi-delete"></i>
                                                     </a>
                                                 </div>
