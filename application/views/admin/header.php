@@ -201,6 +201,11 @@
                                                                     <i class="fas fa-user"></i>Unit Kerja
                                                                 </a>
                                                             </li>
+                                                            <li>
+                                                                <a href="<?php echo base_url("Admin/Keluhan") ?>">
+                                                                    <i class="fas fa-user"></i>Keluhan
+                                                                </a>
+                                                            </li>
 
                                                         </ul>
                                                     </nav>
