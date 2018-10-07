@@ -93,7 +93,7 @@
                                         <label for="input-unit_kerja" class=" form-control-label">Unit Kerja</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-unit_kerja" name="fk_unit_kerja" placeholder="Masukan Unit Kerja" class="form-control" value="<?php echo set_value("unit_kerja") ?>">
+                                        <input type="text" id="input-unit_kerja" name="fk_unit_kerja" placeholder="Masukan Unit Kerja" class="form-control" value="<?php echo set_value("fk_unit_kerja") ?>">
                                         <small class="form-text text-muted">Hanya diisi angka</small>
                                     </div>
                                 </div>

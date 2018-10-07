@@ -206,6 +206,11 @@
                                                                     <i class="fas fa-user"></i>Keluhan
                                                                 </a>
                                                             </li>
+                                                            <li>
+                                                                <a href="<?php echo base_url("Admin/Respon") ?>">
+                                                                    <i class="fas fa-user"></i>Respon
+                                                                </a>
+                                                            </li>
 
                                                         </ul>
                                                     </nav>
