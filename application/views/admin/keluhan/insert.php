@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
-                                        <label for="input-judul" class=" form-control-label">Judul</label>
+                                        <label for="input-judul" class=" form-control-label">Judul Keluhan</label>
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-judul" name="judul" placeholder="Masukan Judul" class="form-control" value="<?php echo set_value("judul") ?>">
