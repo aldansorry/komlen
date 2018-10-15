@@ -26,6 +26,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo $lingkup_keluhan->kode ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('kode') ?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -35,6 +36,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-nama" name="nama" placeholder="Masukan Nama" class="form-control" value="<?php echo $lingkup_keluhan->nama ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('nama') ?>
                                     </div>
                                 </div>
                             
