@@ -18,7 +18,7 @@ class UnitKerja extends CI_Controller {
 	}
 	public function insert()
 	{
-		$this->form_validation->set_rules('kode','Kode',"required");
+		$this->form_validation->set_rules('kode','Kode',"required|alpha|trim");
 		$this->form_validation->set_rules('nama','Nama',"required");
 
 		if ($this->form_validation->run() == FALSE) {
@@ -32,7 +32,7 @@ class UnitKerja extends CI_Controller {
 	}
 	public function update($id)
 	{
-		$this->form_validation->set_rules('kode','Kode',"required");
+		$this->form_validation->set_rules('kode','Kode',"required|alpha|trim");
 		$this->form_validation->set_rules('nama','Nama',"required");
 		
 		
