@@ -26,6 +26,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo set_value("kode") ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('kode')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -35,6 +36,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="datetime" id="input-tanggal" name="tanggal" placeholder="Masukan Tanggal" class="form-control" value="<?php echo set_value("tanggal") ?>">
                                         <small class="form-text text-muted">Hanya diisi angka</small>
+                                        <?php echo form_error('tanggal')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -44,6 +46,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-judul" name="judul" placeholder="Masukan Judul" class="form-control" value="<?php echo set_value("judul") ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('judul')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -52,6 +55,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="keluhan" id="input-keluhan" rows="4" placeholder="Masukan Keluhan" class="form-control"><?php echo set_value("keluhan") ?></textarea>
+                                        <?php echo form_error('keluhan')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -69,6 +73,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="status" id="input-status" name="status" placeholder="Masukan status" class="form-control" value="<?php echo set_value("status") ?>">
                                         <small class="help-block form-text">Hanya diisi angka</small>
+                                        <?php echo form_error('solusi')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
