@@ -18,12 +18,12 @@ class Mahasiswa extends CI_Controller {
 	}
 	public function insert()
 	{
-		$this->form_validation->set_rules('nama','Nama',"required");
-		$this->form_validation->set_rules('alamat','Alamat',"required");
-		$this->form_validation->set_rules('telp','Telp',"required");
-		$this->form_validation->set_rules('email','Email',"required");
-		$this->form_validation->set_rules('username','Username',"required");
-		$this->form_validation->set_rules('password','Password',"required");
+		$this->form_validation->set_rules('nama','Nama',"required|alpha|trim");
+		$this->form_validation->set_rules('alamat','Alamat',"required|trim");
+		$this->form_validation->set_rules('telp','Telp',"required|numeric|trim");
+		$this->form_validation->set_rules('email','Email',"required|valid_email|trim");
+		$this->form_validation->set_rules('username','Username',"required|alpha_numeric|trim");
+		$this->form_validation->set_rules('password','Password',"required|min_length[6]|trim");
 		
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/header');
@@ -36,12 +36,12 @@ class Mahasiswa extends CI_Controller {
 	}
 	public function update($id)
 	{
-		$this->form_validation->set_rules('nama','Nama',"required");
-		$this->form_validation->set_rules('alamat','Alamat',"required");
-		$this->form_validation->set_rules('telp','Telp',"required");
-		$this->form_validation->set_rules('email','Email',"required");
-		$this->form_validation->set_rules('username','Username',"required");
-		$this->form_validation->set_rules('password','Password',"required");
+		$this->form_validation->set_rules('nama','Nama',"required|alpha|trim");
+		$this->form_validation->set_rules('alamat','Alamat',"required|trim");
+		$this->form_validation->set_rules('telp','Telp',"required|numeric|trim");
+		$this->form_validation->set_rules('email','Email',"required|valid_email|trim");
+		$this->form_validation->set_rules('username','Username',"required|alpha_numeric|trim");
+		$this->form_validation->set_rules('password','Password',"required|min_length[6]|trim");
 		
 		if ($this->form_validation->run() == FALSE) {
 			$data['mahasiswa'] = $this->Mahasiswa_model->get_id($id);
