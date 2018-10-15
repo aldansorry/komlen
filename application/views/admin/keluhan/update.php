@@ -26,6 +26,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo $keluhan->kode ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('kode')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -35,6 +36,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="datetime" id="input-tanggal" name="tanggal" placeholder="Masukan Tanggal" class="form-control" value="<?php echo $keluhan->tanggal ?>">
                                         <small class="form-text text-muted">Hanya diisi angka</small>
+                                        <?php echo form_error('tanggal')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -44,6 +46,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-judul" name="judul" placeholder="Masukan Judul" class="form-control" value="<?php echo $keluhan->judul ?>">
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
+                                        <?php echo form_error('judul')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -52,6 +55,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="keluhan" id="input-keluhan" rows="4" placeholder="Masukan Keluhan" class="form-control"><?php echo $keluhan->keluhan ?></textarea>
+                                        <?php echo form_error('keluhan')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -60,6 +64,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="solusi" id="input-solusi" rows="4" placeholder="Masukan Solusi" class="form-control"><?php echo $keluhan->solusi ?></textarea>
+                                        <?php echo form_error('solusi')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -68,6 +73,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="status" id="input-status" rows="4" placeholder="Masukan status" class="form-control"><?php echo $keluhan->status ?></textarea>
+                                        <?php echo form_error('status')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -76,6 +82,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-fk_mahasiswa" name="fk_mahasiswa" placeholder="Masukan Mahasiswa" class="form-control" value="<?php echo $keluhan->fk_mahasiswa ?>">
+                                        <?php echo form_error('fk_mahasiswa')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -85,6 +92,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="lingkup_keluhan" id="input-lingkup_keluhan" name="fk_lingkup_keluhan" placeholder="Masukan Lingkup Keluhan" class="form-control" value="<?php echo $keluhan->fk_lingkup_keluhan ?>">
                                         <small class="help-block form-text">Hanya diisi angka</small>
+                                        <?php echo form_error('fk_lingkup_keluhan')?>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -94,6 +102,7 @@
                                     <div class="col-12 col-md-9">
                                         <input type="text" id="input-unit_kerja" name="fk_unit_kerja" placeholder="Masukan Unit Kerja" class="form-control" value="<?php echo $keluhan->fk_unit_kerja ?>">
                                         <small class="form-text text-muted">Hanya diisi angka</small>
+                                        <?php echo form_error('fk_unit_kerja')?>
                                     </div>
                                 </div>
                             </form>
