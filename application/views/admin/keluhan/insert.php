@@ -34,7 +34,7 @@
                                         <label for="input-tanggal" class=" form-control-label">Tanggal</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="datetime" id="input-tanggal" name="tanggal" placeholder="Masukan Tanggal" class="form-control" value="<?php echo set_value("tanggal") ?>">
+                                        <input type="date" id="input-tanggal" name="tanggal" placeholder="Masukan Tanggal" class="form-control" value="<?php echo set_value("tanggal") ?>">
                                         <small class="form-text text-muted">Hanya diisi angka</small>
                                         <?php echo form_error('tanggal')?>
                                     </div>
@@ -81,7 +81,11 @@
                                         <label for="input-fk_mahasiswa" class=" form-control-label">Mahasiswa</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-fk_mahasiswa" name="fk_mahasiswa" placeholder="Masukan Mahasiswa" class="form-control" value="<?php echo set_value("fk_mahasiswa") ?>">
+                                        <select name="fk_mahasiswa" id="" class="form-control">
+                                            <?php foreach ($this->db->get("mahasiswa")->result() as $key => $value): ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -89,8 +93,11 @@
                                         <label for="input-lingkup_keluhan" class=" form-control-label">Lingkup Keluhan</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="lingkup_keluhan" id="input-lingkup_keluhan" name="fk_lingkup_keluhan" placeholder="Masukan Lingkup Keluhan" class="form-control" value="<?php echo set_value("lingkup_keluhan") ?>">
-                                        <small class="help-block form-text">Hanya diisi angka</small>
+                                        <select name="fk_lingkup_keluhan" id="" class="form-control">
+                                            <?php foreach ($this->db->get("lingkup_keluhan")->result() as $key => $value): ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -98,8 +105,11 @@
                                         <label for="input-unit_kerja" class=" form-control-label">Unit Kerja</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-unit_kerja" name="fk_unit_kerja" placeholder="Masukan Unit Kerja" class="form-control" value="<?php echo set_value("fk_unit_kerja") ?>">
-                                        <small class="form-text text-muted">Hanya diisi angka</small>
+                                    <select name="fk_unit_kerja" id="" class="form-control">
+                                            <?php foreach ($this->db->get("unit_kerja")->result() as $key => $value): ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                 </div>
                             </form>

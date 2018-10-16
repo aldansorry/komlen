@@ -12,6 +12,10 @@ class Mahasiswa_model extends CI_Model {
 	{
 		return $this->db->where('id',$id)->get('mahasiswa')->row(0);
 	}
+	public function auto_code()
+	{
+		# code...
+	}
 	public function insert()
 	{
 		$set = array(

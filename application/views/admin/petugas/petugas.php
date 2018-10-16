@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="overview-wrap">
                         <h2 class="title-1">Petugas</h2>
-                        <a href="<?php echo base_url('Admin/petugas/insert') ?>" class="au-btn au-btn-icon au-btn--blue">
+                        <a href="<?php echo base_url('Admin/Petugas/insert') ?>" class="au-btn au-btn-icon au-btn--blue">
                             <i class="zmdi zmdi-plus"></i>Tambah Data</a>
                         </div>
                     </div>

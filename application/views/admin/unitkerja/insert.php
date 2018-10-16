@@ -24,9 +24,11 @@
                                         <label for="input-kode" class=" form-control-label">Kode</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo set_value("kode") ?>">
-                                        <small class="form-text text-muted">Hanya diisi huruf dan space</small>
-                                        <?php echo form_error('kode') ?>
+                                        <select name="fk_keluhan" id="" class="form-control">
+                                            <?php foreach ($this->db->get("keluhan")->result() as $key => $value): ?>
+                                                <option value="<?php echo $value->kode ?>"><?php echo $value->judul ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row form-group">

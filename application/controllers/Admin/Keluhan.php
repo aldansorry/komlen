@@ -18,9 +18,9 @@ class Keluhan extends CI_Controller {
 	}
 	public function insert()
 	{
-		$this->form_validation->set_rules('kode','Nama',"required|alpha|trim");
-		$this->form_validation->set_rules('tanggal','Alamat',"required|numeric|trim");
-		$this->form_validation->set_rules('judul','Judul',"required|alpha|");
+		$this->form_validation->set_rules('kode','Kode',"required|alpha|trim");
+		$this->form_validation->set_rules('tanggal','Tanggal',"required|trim");
+		$this->form_validation->set_rules('judul','Judul',"required|alpha");
 		$this->form_validation->set_rules('keluhan','Keluhan',"required");
 		$this->form_validation->set_rules('solusi','Solusi',"required");
 		$this->form_validation->set_rules('status','Status',"required");

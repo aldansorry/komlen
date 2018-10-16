@@ -32,8 +32,11 @@
                                         <label for="input-keluhan" class=" form-control-label">Keluhan</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="keluhan" id="input-keluhan" name="fk_keluhan" placeholder="Masukan Keluhan" class="form-control" value="<?php echo set_value("fk_keluhan") ?>">
-                                        <small class="help-block form-text">Hanya diisi angka</small>
+                                        <select name="fk_keluhan" id="" class="form-control">
+                                            <?php foreach ($this->db->get("keluhan")->result() as $key => $value): ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->judul ?></option>
+                                            <?php endforeach ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row form-group">
