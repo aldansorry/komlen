@@ -69,7 +69,7 @@
 								<button class="primary-btn2 mt-20 text-uppercase ">Get Started<span class="lnr lnr-arrow-right"></span></button>
 							</div>
 							<div class="col-lg-6 d-flex align-self-end img-right">
-								<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/header-img.png" alt="">
+								<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/logo.png" alt="">
 							</div>
 						</div>
 				</div>
@@ -97,7 +97,7 @@
 				<div class="container-fluid">
 					<div class="row d-flex justify-content-end align-items-center">
 						<div class="col-lg-6 col-md-12 about-left no-padding">
-							<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/about-img.jpg" alt="">
+							<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/as.png" alt="">
 						</div>
 						<div class="col-lg-6 col-md-12 about-right no-padding">
 							<h1>Masukan <br> Komplain & Saran</h1>

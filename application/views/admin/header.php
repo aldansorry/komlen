@@ -45,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="<?php echo base_url('assets/') ?>images/icon/komlen.png" alt="J&T Express" />
+                            <img src="<?php echo base_url('assets/') ?>images/icon/jnt-logo.png" alt="J&T Express" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -157,7 +157,7 @@
                                         <aside class="menu-sidebar d-none d-lg-block">
                                             <div class="logo">
                                                 <a href="#">
-                                                    <img src="<?php echo base_url('assets/') ?>images/icon/komlen.png" alt="Cool Admin" />
+                                                    <img src="<?php echo base_url('assets/') ?>images/icon/logo.png" alt="Cool Admin" style="padding: 20px"/>
                                                 </a>
                                             </div>
                                             <div class="menu-sidebar__content js-scrollbar1">
