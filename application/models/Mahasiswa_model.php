@@ -14,12 +14,16 @@ class Mahasiswa_model extends CI_Model {
 	}
 	public function auto_code()
 	{
-		# code...
+		$yearnow = substr(date("Ymd"), -6);
+		$id = $this->db->query("select id from mahasiswa order by id desc")->row(0)->id;
+		$number = substr("000000".($id+1),-6);
+		$nim = $yearnow.$number;
+		return $nim;
 	}
 	public function insert()
 	{
 		$set = array(
-			'nim' => $this->input->post('nim'),
+			'nim' => $this->input->post("nim"),
 			'nama' => $this->input->post('nama'),
 			'alamat' => $this->input->post('alamat'),
 			'telp' => $this->input->post('telp'),

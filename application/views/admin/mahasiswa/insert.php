@@ -24,9 +24,7 @@
                                         <label for="input-nim" class=" form-control-label">Nim</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-nim" name="nim" placeholder="Masukan Nim" class="form-control" value="<?php echo set_value("nim") ?>">
-                                        <small class="form-text text-muted">Hanya diisi angka</small>
-                                        <?php echo form_error('nim') ?>
+                                        <input type="text" id="input-nim" name="nim" placeholder="Masukan Nim" class="form-control" value="<?php echo $this->Mahasiswa_model->auto_code() ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="row form-group">
