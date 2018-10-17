@@ -44,7 +44,8 @@
 									<a href="#service">Services</a>
 									<a href="#appoinment">Appoinment</a>
 									<a href="#consultant">Consultants</a>
-									<a href="<?php echo base_url("Login") ?>">Admin</a>
+									<a href="<?php echo base_url("Login") ?>">Login</a>
+									<a href="<?php echo base_url("Login/admin") ?>">Admin</a>
 								</nav>
 								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
 							</div>
@@ -97,27 +98,37 @@
 				<div class="container-fluid">
 					<div class="row d-flex justify-content-end align-items-center">
 						<div class="col-lg-6 col-md-12 about-left no-padding">
-							<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/as.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/as.png" alt="" style="height: 750px;">
 						</div>
 						<div class="col-lg-6 col-md-12 about-right no-padding">
 							<h1>Masukan <br> Komplain & Saran</h1>
-							<form class="booking-form" id="myForm" action="donate.php">
+							<form class="booking-form" action="<?php echo base_url("Home/keluhan") ?>" method="post">
 								 	<div class="row">
 								 		<div class="col-lg-12 d-flex flex-column">
-							 				<input name="name" placeholder="Patient name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient name'" class="form-control mt-20" required="" type="text" required>
+							 				<input name="judul" placeholder="Judul" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Judul'" class="form-control mt-20" required="" type="text" required>
 								 		</div>
 							 			<div class="col-lg-6 d-flex flex-column">
-											<input name="phone" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" class="form-control mt-20" required="" type="text" required>
+											<select name="fk_lingkup_keluhan" id="" class="form-control mt-20">
+												<?php foreach ($this->db->get("lingkup_keluhan")->result() as $value): ?>
+													<option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+												<?php endforeach ?>
+											</select>
 										</div>
 										<div class="col-lg-6 d-flex flex-column">
-											<input id="datepicker2" name="app-date" class="single-in mt-20"  onblur="this.placeholder = 'Appoinment date'" type="text" placeholder="Appoinment date" required>
+											<select name="fk_unit_kerja" id="" class="form-control mt-20">
+												<?php foreach ($this->db->get("unit_kerja")->result() as $value): ?>
+													<option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+												<?php endforeach ?>
+											</select>
 										</div>
 										<div class="col-lg-12 flex-column">
-											<textarea class="form-control mt-20" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+											<textarea class="form-control mt-20" name="keluhan" placeholder="Keluhan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Keluhan'" required=""></textarea>
 										</div>
-
+										<div class="col-lg-12 flex-column">
+											<textarea class="form-control mt-20" name="solusi" placeholder="Solusi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Solusi'" required=""></textarea>
+										</div>
 										<div class="col-lg-12 d-flex justify-content-end send-btn">
-											<button class="submit-btn primary-btn mt-20 text-uppercase ">confirm booking<span class="lnr lnr-arrow-right"></span></button>
+											<input class="submit-btn primary-btn mt-20 text-uppercase" type="submit" value="Keluhkan">
 										</div>
 
 										<div class="alert-msg"></div>

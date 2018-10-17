@@ -22,4 +22,25 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+	public function keluhan()
+	{
+		if($this->session->userdata('logged_in_user') == null){
+			redirect('Home','refresh');
+		}
+		$this->load->model('Keluhan_model');
+		$set = array(
+			'kode' => $this->Keluhan_model->auto_code(),
+			'tanggal' => date("Y-m-d"),
+			'judul' => $this->input->post('judul'),
+			'keluhan' => $this->input->post('keluhan'),
+			'solusi' => $this->input->post('solusi'),
+			'status' => 1,
+			'fk_mahasiswa' => $this->session->userdata('logged_in_user')['id'],
+			'fk_lingkup_keluhan' => $this->input->post('fk_lingkup_keluhan'),
+			'fk_unit_kerja' => $this->input->post('fk_unit_kerja'),
+
+		);
+		$this->db->insert('keluhan',$set);
+		redirect('Home','refresh');
+	}
 }

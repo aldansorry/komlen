@@ -11,15 +11,44 @@ class Login extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('admin/login');
 		} else {
-			redirect('Admin/Dashboard','refresh');
+			redirect('Home','refresh');
 		}
 	}
 	public function cekDB($username)
 	{
 		$password = md5($this->input->post('password'));
-		$cekDB = $this->db->where(array('username'=>$username,'password'=>$password))->get('petugas');
+		$cekDB = $this->db->where(array('username'=>$username,'password'=>$password))->get('mahasiswa');
 		if ($cekDB->num_rows() == 1) {
 			$data = $cekDB->result()[0];
+			$userdata = array(
+				'id' => $data->id,
+				'nama' => $data->nama,
+				'username' => $username
+			);
+			$this->session->set_userdata('logged_in_user',$userdata);
+			return true;
+		}else{
+			$this->form_validation->set_message('cekDB','Username dan password tidak valid');
+			return false;
+		}
+	}
+	public function admin()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('username','Username','required|trim|callback_cekDB_admin');
+		$this->form_validation->set_rules('password','Password','required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('admin/login');
+		} else {
+			redirect('Admin/Dashboard','refresh');
+		}
+	}
+	public function cekDB_admin($username)
+	{
+		$password = md5($this->input->post('password'));
+		$cekDB_admin = $this->db->where(array('username'=>$username,'password'=>$password))->get('petugas');
+		if ($cekDB_admin->num_rows() == 1) {
+			$data = $cekDB_admin->result()[0];
 			$userdata = array(
 				'id' => $data->id,
 				'nama' => $data->nama,
@@ -29,7 +58,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('logged_in',$userdata);
 			return true;
 		}else{
-			$this->form_validation->set_message('cekDB','Username dan password tidak valid');
+			$this->form_validation->set_message('cekDB_admin','Username dan password tidak valid');
 			return false;
 		}
 	}
