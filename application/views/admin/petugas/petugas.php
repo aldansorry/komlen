@@ -24,6 +24,7 @@
                                         <th>email</th>
                                         <th>username</th>
                                         <th>password</th>
+                                        <th>level</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -38,6 +39,7 @@
                                             <td><?php echo $value->email ?></td>
                                             <td><?php echo $value->username ?></td>
                                             <td><?php echo $value->password ?></td>
+                                            <td><?php echo $value->fk_level ?></td>
                                             <td>
                                                 <div class="table-data-feature">
                                                     <a href="<?php echo base_url("Admin/Petugas/update/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">

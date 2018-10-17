@@ -8,6 +8,9 @@ class Keluhan extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('Keluhan_model');
+		if($this->session->userdata('logged_in') == null){
+			redirect('Login','refresh');
+		}
 	}
 	public function index()
 	{

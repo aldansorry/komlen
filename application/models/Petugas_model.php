@@ -22,6 +22,7 @@ class Petugas_model extends CI_Model {
 			'email' => $this->input->post('email'),
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password')),
+			'fk_level' => $this->input->post('fk_level')
 		);
 		$this->db->insert('petugas',$set);
 	}
@@ -35,6 +36,7 @@ class Petugas_model extends CI_Model {
 			'email' => $this->input->post('email'),
 			'username' => $this->input->post('username'),
 			'password' => md5($this->input->post('password')),
+			'fk_level' => $this->input->post('fk_level')
 		);
 		$this->db->where('id',$id);
 		$this->db->update('petugas',$set);

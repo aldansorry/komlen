@@ -87,6 +87,18 @@
                                         <?php echo form_error('password')?>
                                     </div>
                                 </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="input-fk_level" class=" form-control-label">fk_level</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="fk_level" id="" class="form-control">
+                                            <?php foreach ($this->db->get('level')->result() as $value): ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="card-footer">

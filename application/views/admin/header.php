@@ -181,7 +181,9 @@
                                                                     </li>
                                                                 </ul>
                                                             </li>
-                                                            <li>
+                                                            <?php if ($this->session->userdata('logged_in')['fk_level'] != 3): ?>
+                                                                <?php if ($this->session->userdata('logged_in')['fk_level'] == 1): ?>
+                                                                    <li>
                                                                 <a href="<?php echo base_url("Admin/Mahasiswa") ?>">
                                                                     <i class="fas fa-user"></i>Mahasiswa
                                                                 </a>
@@ -191,16 +193,18 @@
                                                                     <i class="fas fa-user"></i>Petugas
                                                                 </a>
                                                             </li>
+                                                                <?php endif ?>
                                                             <li>
                                                                 <a href="<?php echo base_url("Admin/LingkupKeluhan") ?>">
                                                                     <i class="fas fa-user"></i>Lingkup Keluhan
                                                                 </a>
                                                             </li>
-                                                             <li>
+                                                            <li>
                                                                 <a href="<?php echo base_url("Admin/UnitKerja") ?>">
                                                                     <i class="fas fa-user"></i>Unit Kerja
                                                                 </a>
                                                             </li>
+                                                            <?php endif ?>
                                                             <li>
                                                                 <a href="<?php echo base_url("Admin/Keluhan") ?>">
                                                                     <i class="fas fa-user"></i>Keluhan
@@ -346,7 +350,7 @@
                                                                                 <img src="<?php echo base_url('assets/') ?>images/icon/avatar-01.jpg" alt="John Doe" />
                                                                             </div>
                                                                             <div class="content">
-                                                                                <a class="js-acc-btn" href="#">john doe</a>
+                                                                                <a class="js-acc-btn" href="#"><?php echo $this->session->userdata("logged_in")['nama'] ?></a>
                                                                             </div>
                                                                             <div class="account-dropdown js-dropdown">
                                                                                 <div class="info clearfix">
@@ -357,34 +361,22 @@
                                                                                     </div>
                                                                                     <div class="content">
                                                                                         <h5 class="name">
-                                                                                            <a href="#">john doe</a>
+                                                                                            <a href="#"><?php echo $this->session->userdata("logged_in")['nama'] ?></a>
                                                                                         </h5>
-                                                                                        <span class="email">johndoe@example.com</span>
+                                                                                        <span class="email"><?php echo $this->session->userdata("logged_in")['username'] ?></span>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="account-dropdown__body">
-                                                                                    <div class="account-dropdown__item">
-                                                                                        <a href="#">
-                                                                                            <i class="zmdi zmdi-account"></i>Account</a>
-                                                                                        </div>
-                                                                                        <div class="account-dropdown__item">
-                                                                                            <a href="#">
-                                                                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                                                            </div>
-                                                                                            <div class="account-dropdown__item">
-                                                                                                <a href="#">
-                                                                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="account-dropdown__footer">
-                                                                                                <a href="#">
-                                                                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="account-dropdown__footer">
+                                                                                    <a href="<?php echo base_url("Login/logout") ?>">
+                                                                                        <i class="zmdi zmdi-power"></i>Logout</a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </header>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </header>

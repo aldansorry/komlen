@@ -8,6 +8,12 @@ class Petugas extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('Petugas_model');
+		if($this->session->userdata('logged_in') == null){
+			redirect('Login','refresh');
+		}
+		if($this->session->userdata('logged_in')['fk_level'] == 3){
+			redirect('Admin/Dashboard','refresh');
+		}
 	}
 	public function index()
 	{

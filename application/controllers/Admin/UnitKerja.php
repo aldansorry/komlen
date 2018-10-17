@@ -8,6 +8,12 @@ class UnitKerja extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('UnitKerja_model');
+		if($this->session->userdata('logged_in') == null){
+			redirect('Login','refresh');
+		}
+		if($this->session->userdata('logged_in')['fk_level'] == 3){
+			redirect('Admin/Dashboard','refresh');
+		}
 	}
 	public function index()
 	{

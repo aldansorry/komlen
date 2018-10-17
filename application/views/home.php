@@ -44,7 +44,7 @@
 									<a href="#service">Services</a>
 									<a href="#appoinment">Appoinment</a>
 									<a href="#consultant">Consultants</a>
-									<a href="<?php echo base_url("Admin/Mahasiswa") ?>">Admin</a>
+									<a href="<?php echo base_url("Login") ?>">Admin</a>
 								</nav>
 								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
 							</div>
