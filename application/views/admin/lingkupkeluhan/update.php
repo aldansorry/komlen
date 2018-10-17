@@ -24,7 +24,7 @@
                                         <label for="input-kode" class=" form-control-label">Kode</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo $lingkup_keluhan->kode ?>">
+                                        <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo $lingkup_keluhan->kode ?>" readonly>
                                         <small class="form-text text-muted">Hanya diisi huruf dan space</small>
                                         <?php echo form_error('kode') ?>
                                     </div>

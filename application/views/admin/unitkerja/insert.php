@@ -24,11 +24,7 @@
                                         <label for="input-kode" class=" form-control-label">Kode</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <select name="fk_keluhan" id="" class="form-control">
-                                            <?php foreach ($this->db->get("keluhan")->result() as $key => $value): ?>
-                                                <option value="<?php echo $value->kode ?>"><?php echo $value->judul ?></option>
-                                            <?php endforeach ?>
-                                        </select>
+                                         <input type="text" id="input-kode" name="kode" placeholder="Masukan Kode" class="form-control" value="<?php echo $this->UnitKerja_model->auto_code(); ?>" reaonly>
                                     </div>
                                 </div>
                                 <div class="row form-group">
