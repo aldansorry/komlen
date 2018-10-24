@@ -102,7 +102,8 @@
 						</div>
 						<div class="col-lg-6 col-md-12 about-right no-padding">
 							<h1>Masukan <br> Komplain & Saran</h1>
-							<form class="booking-form" action="<?php echo base_url("Home/keluhan") ?>" method="post">
+							<?php if ($this->session->userdata('logged_in')): ?>
+									<form class="booking-form" action="<?php echo base_url("Home/keluhan") ?>" method="post">
 								 	<div class="row">
 								 		<div class="col-lg-12 d-flex flex-column">
 							 				<input name="judul" placeholder="Judul" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Judul'" class="form-control mt-20" required="" type="text" required>
@@ -134,6 +135,9 @@
 										<div class="alert-msg"></div>
 									</div>
 					  		</form>
+					  	<?php else: ?>	
+					  		<a href="<?php echo base_url("Login") ?>" class="submit-btn primary-btn mt-20 text-uppercase">Login Dahulu</a>
+							<?php endif ?>
 							</div>
 						</div>
 					</div>
@@ -167,7 +171,7 @@
 			<!-- end fact Area -->
 
 			<!-- Start blog Area -->
-			<section class="blog-area section-gap">
+			<!-- <section class="blog-area section-gap">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-md-8 pb-30 header-text">
@@ -242,8 +246,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</div>		
+			</section> -->
 			<!-- end blog Area -->
 
 			<!-- start footer Area -->

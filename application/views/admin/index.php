@@ -6,8 +6,6 @@
                             <div class="col-md-12">
                                 <div class="overview-wrap">
                                     <h2 class="title-1">overview</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
                                 </div>
                             </div>
                         </div>
@@ -20,8 +18,8 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
+                                                <h2><?php echo $this->db->get("mahasiswa")->num_rows() ?></h2>
+                                                <span>Mahasiswa</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -35,11 +33,11 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <h2><?php echo $this->db->get("petugas")->num_rows(); ?></h2>
+                                                <span>Petugas</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -56,14 +54,14 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
+                                                <h2><?php echo $this->db->get("keluhan")->num_rows(); ?></h2>
+                                                <span>Keluhan</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart3"></canvas>
                                         </div>
-                                    </div>
+                                    </div>  
                                 </div>
                             </div>
                             <div class="col-sm-6 col-lg-3">
@@ -71,11 +69,11 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-money"></i>
+                                                <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <h2><?php echo $this->db->get("respon")->num_rows() ?></h2>
+                                                <span>Keluhan Terbalas</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -84,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- 
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="au-card recent-report">
@@ -528,7 +526,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
