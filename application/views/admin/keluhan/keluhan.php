@@ -26,7 +26,6 @@
                                         <th>mahasiswa</th>
                                         <th>lingkup keluhan</th>
                                         <th>unit kerja</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,16 +41,6 @@
                                             <td><?php echo $value->fk_mahasiswa ?></td>
                                             <td><?php echo $value->fk_lingkup_keluhan ?></td>
                                             <td><?php echo $value->fk_unit_kerja ?></td>
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <a href="<?php echo base_url("Admin/Keluhan/update/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </a>
-                                                    <a href="<?php echo base_url("Admin/Keluhan/delete/".$value->id) ?>" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
                                         </tr>
                                     <?php endforeach ?>
 
