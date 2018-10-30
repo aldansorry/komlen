@@ -5,11 +5,13 @@ class Keluhan_model extends CI_Model {
 
 	public function get()
 	{
-		$this->db->select("keluhan.*");
+		$this->db->select("keluhan.*,(select nama from unit_kerja where id=fk_unit_kerja) as unit_kerja,(select nama from lingkup_keluhan where id=fk_lingkup_keluhan) as lingkup_keluhan");
 		return $this->db->get('keluhan')->result();
 	}
 	public function get_id($id)
 	{
+
+		$this->db->select("keluhan.*,(select nama from unit_kerja where id=fk_unit_kerja) as unit_kerja,(select nama from lingkup_keluhan where id=fk_lingkup_keluhan) as lingkup_keluhan");
 		return $this->db->where('id',$id)->get('keluhan')->row(0);
 	}
 	public function auto_code()
@@ -60,5 +62,30 @@ class Keluhan_model extends CI_Model {
 	{
 		$this->db->where('id',$id);
 		$this->db->delete('keluhan');
+	}
+
+	public function get_by_session()
+	{
+		if ($this->session->userdata("logged_in_user") != null) {
+			$id = $this->session->userdata("logged_in_user")['id'];
+			$this->db->select("keluhan.*,(select nama from unit_kerja where id=fk_unit_kerja) as unit_kerja,(select nama from lingkup_keluhan where id=fk_lingkup_keluhan) as lingkup_keluhan");
+
+			$this->db->where('fk_mahasiswa',$id);
+			return $this->db->get('keluhan')->result();
+		}else{
+			return false;
+		}
+	}
+	public function get_respon($id)
+	{
+		$this->db->select("respon.*,(select nama from petugas where id=fk_petugas) petugas");
+		$this->db->where('fk_keluhan',$id);
+		return $this->db->get('respon')->result();
+	}
+	public function update_readed($id,$status)
+	{
+		$set['is_readed'] = $status;
+		$this->db->where("id",$id);
+		$this->db->update("keluhan",$set);
 	}
 }

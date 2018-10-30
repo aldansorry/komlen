@@ -20,7 +20,17 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		$this->load->model('Keluhan_model');
+		$data['keluhan'] = $this->Keluhan_model->get_by_session();
+		$this->load->view('home',$data);
+	}
+	public function modal_respon($id)
+	{
+		$this->load->model("Keluhan_model");
+		$this->Keluhan_model->update_readed($id,"1");
+		$data['keluhan'] = $this->Keluhan_model->get_id($id);
+		$data['respon'] = $this->Keluhan_model->get_respon($id);
+		$this->load->view('modal_respon',$data);
 	}
 	public function keluhan()
 	{

@@ -31,6 +31,8 @@ class Respon extends CI_Controller {
 			$this->load->view('admin/footer');
 		} else {
 			$this->Respon_model->insert();
+			$this->load->model("Keluhan_model");
+			$this->Keluhan_model->update_readed($this->input->post("fk_keluhan"),"0");
 			redirect('Admin/Respon','refresh');
 		}
 	}
