@@ -44,8 +44,14 @@
 									<a href="#service">Services</a>
 									<a href="#appoinment">Appoinment</a>
 									<a href="#consultant">Consultants</a>
+									<?php if ($this->session->userdata("logged_in_user") == null): ?>
 									<a href="<?php echo base_url("Login") ?>">Login</a>
-									<a href="<?php echo base_url("Login/admin") ?>">Admin</a>
+								<?php else: ?>
+									<a href="<?php echo base_url("Login/logout") ?>">Logout</a>
+									<?php endif ?>
+									<?php if ($this->session->userdata("logged_in") != null): ?>
+									<a href="<?php echo base_url("Admin/Dashboard") ?>">Dashboard</a>
+									<?php endif ?>
 								</nav>
 								<div class="menu-bar"><span class="lnr lnr-menu"></span></div>
 							</div>
@@ -102,7 +108,7 @@
 						</div>
 						<div class="col-lg-6 col-md-12 about-right no-padding">
 							<h1>Masukan <br> Komplain & Saran</h1>
-							<?php if ($this->session->userdata('logged_in')): ?>
+							<?php if ($this->session->userdata('logged_in_user')): ?>
 									<form class="booking-form" action="<?php echo base_url("Home/keluhan") ?>" method="post">
 								 	<div class="row">
 								 		<div class="col-lg-12 d-flex flex-column">
@@ -171,83 +177,25 @@
 			<!-- end fact Area -->
 
 			<!-- Start blog Area -->
-			<!-- <section class="blog-area section-gap">
+			<section class="blog-area section-gap">
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-md-8 pb-30 header-text">
-							<h1>Galeri</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
-							</p>
+							<h1>Keluhan</h1>
+							
 						</div>
 					</div>
 					<div class="row">
-						<div class="single-blog col-lg-4 col-md-4">
-
-							<img class="f-img img-fluid mx-auto" src="<?php echo base_url("assets_home/") ?>img/b1.jpg" alt="">
-							<h4>
-								<a href="#">Portable Fashion for young women</a>
-							</h4>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
-								 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>
-						</div>
-						<div class="single-blog col-lg-4 col-md-4">
-							<img class="f-img img-fluid mx-auto" src="<?php echo base_url("assets_home/") ?>img/b2.jpg" alt="">
-							<h4>
-								<a href="#">Summer ware are coming</a>
-							</h4>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
- 								commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>
-						</div>
-						<div class="single-blog col-lg-4 col-md-4">
-							<img class="f-img img-fluid mx-auto" src="<?php echo base_url("assets_home/") ?>img/b3.jpg" alt="">
-							<h4>
-								<a href="#">Summer ware are coming</a>
-							</h4>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-							</p>
-							<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-								<div>
-									<img class="img-fluid" src="<?php echo base_url("assets_home/") ?>img/user.png" alt="">
-									<a href="#"><span>Mark Wiens</span></a>
-								</div>
-								<div class="meta">
-									13th Dec
-									<span class="lnr lnr-heart"></span> 15
-									<span class="lnr lnr-bubble"></span> 04
-								</div>
-							</div>
+						<div class="col-md-8 mx-auto">
+							<table>
+								<tr>
+									<th></th>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>		
-			</section> -->
+			</section>
 			<!-- end blog Area -->
 
 			<!-- start footer Area -->

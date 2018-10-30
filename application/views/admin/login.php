@@ -42,7 +42,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
+                            <a href="<?php echo base_url("Login/admin") ?>">
                                 <img src="images/icon/logo.png" alt="CoolAdmin">
                             </a>
                         </div>
