@@ -25,7 +25,7 @@ class Petugas extends CI_Controller {
 	public function insert()
 	{
 		$this->form_validation->set_rules('nik','Nik',"required|min_length[12]|numeric|trim");
-		$this->form_validation->set_rules('nama','Nama',"required|alpha|trim");
+		$this->form_validation->set_rules('nama','Nama','required|regex_match[/^[a-zA-Z][a-zA-Z\\s]+$/]');
 		$this->form_validation->set_rules('alamat','Alamat',"required|trim");
 		$this->form_validation->set_rules('telp','Telp',"required|numeric|trim");
 		$this->form_validation->set_rules('email','Email',"required|valid_email|trim");
@@ -44,7 +44,7 @@ class Petugas extends CI_Controller {
 	public function update($id)
 	{
 		$this->form_validation->set_rules('nik','Nik',"required|min_length[12]|numeric|trim");
-		$this->form_validation->set_rules('nama','Nama',"required|alpha|trim");
+		$this->form_validation->set_rules('nama','Nama','required|regex_match[/^[a-zA-Z][a-zA-Z\\s]+$/]');
 		$this->form_validation->set_rules('alamat','Alamat',"required|trim");
 		$this->form_validation->set_rules('telp','Telp',"required|numeric|trim");
 		$this->form_validation->set_rules('email','Email',"required|valid_email|trim");

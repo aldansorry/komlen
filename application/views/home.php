@@ -39,11 +39,11 @@
 								<a href="#home"><img src="<?php echo base_url("assets/") ?>images/icon/logo.png" alt="" width="150px"></a>
 							</div>
 							<div class="main-menubar d-flex align-items-center">
-								<nav class="hide">
+								<nav class="">
 									<a href="#home">Home</a>
-									<a href="#keluhan">Keluhan</a>
-									<a href="#appoinment">Appoinment</a>
-									<a href="#consultant">Consultants</a>
+									<a href="#deskripsi">Deskrispsi</a>
+									<a href="#keluhan">List Keluhan</a>
+									<a href="#tambahkeluhan">Tambah Keluhan</a>
 									<?php if ($this->session->userdata("logged_in_user") == null): ?>
 										<a href="<?php echo base_url("Login") ?>">Login</a>
 										<?php else: ?>
@@ -65,7 +65,7 @@
 				<section class="banner-area relative" id="home">
 					<div class="container">
 						<div class="row fullscreen align-items-center justify-content-center">
-							<div class="banner-content col-lg-6 col-md-12">
+							<div class="banner-content col-lg-6 col-md-12" style="padding-top:20px ">
 								<h1 class="text-uppercase">
 									Komplen Untuk<br>
 									Polinema lebih baik
@@ -84,7 +84,7 @@
 				<!-- End banner Area -->
 
 				<!-- Start feature Area -->
-				<section class="consultans-area section-gap" id="consultant">
+				<section class="consultans-area section-gap" id="deskripsi">
 					<div class="container">
 						<div class="row d-flex justify-content-center">
 							<div class="col-md-8 pb-80 header-text">
@@ -100,7 +100,7 @@
 
 
 				<!-- Start about Area -->
-				<section class="about-area" id="appoinment">
+				<section class="about-area" id="tambahkeluhan">
 					<div class="container-fluid">
 						<div class="row d-flex justify-content-end align-items-center">
 							<div class="col-lg-6 col-md-12 about-left no-padding">
@@ -156,19 +156,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 single-fact">
-						<h2 class="counter">2536</h2>
+						<h2 class="counter"><?php echo $this->db->get("keluhan")->num_rows(); ?></h2>
 						<p class="text-uppercase">Komplain / Saran Masuk</p>
 					</div>
 					<div class="col-lg-3 col-md-6 single-fact">
-						<h2 class="counter">6784</h2>
+						<h2 class="counter"><?php echo $this->db->group_by("fk_keluhan")->get("respon")->num_rows(); ?></h2>
 						<p class="text-uppercase">Komplain / Saran Terjawab</p>
 					</div>
 					<div class="col-lg-3 col-md-6 single-fact">
-						<h2 class="counter">1059</h2>
-						<p class="text-uppercase">Komplain / Saran Terselesaikan</p>
+						<h2 class="counter"><?php echo $this->db->group_by("fk_mahasiswa")->get("keluhan")->num_rows(); ?></h2>
+						<p class="text-uppercase">Jumlah Mahasiswa yang melakukan Keluhan</p>
 					</div>
 					<div class="col-lg-3 col-md-6 single-fact">
-						<h2 class="counter">2239</h2>
+						<h2 class="counter"><?php echo $this->db->get("mahasiswa")->num_rows(); ?></h2>
 						<p class="text-uppercase">Jumlah Mahasiswa</p>
 					</div>
 				</div>
@@ -177,7 +177,8 @@
 		<!-- end fact Area -->
 
 		<!-- Start blog Area -->
-		<section class="blog-area section-gap" id="keluhan">
+		<?php if ($this->session->userdata("logged_in_user") != null): ?>
+			<section class="blog-area section-gap" id="keluhan">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-8 pb-30 header-text">
@@ -256,6 +257,7 @@
 			</div>
 		</div>		
 	</section>
+		<?php endif ?>
 	<!-- end blog Area -->
 
 	<!-- start footer Area -->
