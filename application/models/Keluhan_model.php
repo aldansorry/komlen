@@ -88,4 +88,40 @@ class Keluhan_model extends CI_Model {
 		$this->db->where("id",$id);
 		$this->db->update("keluhan",$set);
 	}
+
+
+	public function get_count_keluhan_per_mount()
+	{
+		$this->db->select("count(id) as count_keluhan,month(tanggal) as month_keluhan");
+		$this->db->from("keluhan");
+		$this->db->order_by("month(keluhan.tanggal)","asc");
+		$this->db->group_by("month(keluhan.tanggal)");
+		return $this->db->get()->result();
+	}
+
+	public function get_count_keluhan_terbalas_per_mount()
+	{
+		$this->db->select("count(keluhan.id) as count_keluhan,month(tanggal) as month_keluhan");
+		$this->db->from("keluhan");
+		$this->db->join("respon","keluhan.id=respon.fk_keluhan",'left');
+		$this->db->where("respon.id",null);
+		$this->db->order_by("month(keluhan.tanggal)","asc");
+		$this->db->group_by("month(keluhan.tanggal)");
+		return $this->db->get()->result();
+	}
+
+	public function get_keluhan_by_unit_kerja()
+	{
+		$this->db->select("count(id) as count_keluhan,(select nama from unit_kerja where id=fk_unit_kerja) as unit_kerja");
+		$this->db->from("keluhan");
+		$this->db->group_by("fk_unit_kerja");
+		return $this->db->get()->result();
+	}
+	public function get_keluhan_by_lingkup_keluhan()
+	{
+		$this->db->select("count(id) as count_keluhan,(select nama from lingkup_keluhan where id=fk_lingkup_keluhan) as lingkup_keluhan");
+		$this->db->from("keluhan");
+		$this->db->group_by("fk_lingkup_keluhan");
+		return $this->db->get()->result();
+	}
 }
